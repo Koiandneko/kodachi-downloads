@@ -35,7 +35,7 @@ jobs:
           echo download.kodachi.top > CNAME
           touch .nojekyll
           cat > index.html <<'HTML'
-          <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kodachi 下载</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:640px;margin:12vh auto;padding:24px;color:#263228;background:#f6f8f3}a{color:#215c48}li{margin:20px 0}small{color:#566252}</style><h1>Kodachi 下载</h1><ul><li><a href="KodachiCard.exe" download>Windows 端下载</a> <small>EXE · 188.8 MB</small></li><li><a href="KodachiCard.apk" download>Android 端下载</a> <small>APK · 162.6 MB</small></li></ul><p><a href="SHA256SUMS.txt">SHA-256 文件校验值</a></p></html>
+          <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kodachi 下载</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:640px;margin:12vh auto;padding:24px;color:#263228;background:#f6f8f3}a{color:#215c48}li{margin:20px 0}small{color:#566252}</style><h1>Kodachi 下载</h1><ul><li><a href="KodachiCard.exe" download>KodachiCard Windows 端下载</a> <small>EXE · 188.8 MB</small></li><li><a href="KodachiCard.apk" download>KodachiCard Android 端下载</a> <small>APK · 162.6 MB</small></li></ul><p><a href="SHA256SUMS.txt">SHA-256 文件校验值</a></p></html>
           HTML
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
