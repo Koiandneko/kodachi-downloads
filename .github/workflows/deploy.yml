@@ -25,17 +25,16 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           mkdir -p public
-          gh release download 2026-09-24 --pattern KodachiCard.exe --dir public
-          gh release download 2026-09-24 --pattern KodachiCard.apk --dir public
+          gh release download 2026-09-27 --pattern KodachiCard.zip --dir public
+          gh release download 2026-09-27 --pattern KodachiCard-Android.apk --dir public
           cd public
-          echo "25c8d498728b9a806097d9d9dd4f19e1eaecf8672b9dfe1f8dd46c605acfa118  KodachiCard.exe" > SHA256SUMS.txt
-          echo "7f955efb042a593d82c6da6d53feffdb8143b967e10f6205fff6544492acc332  KodachiCard.apk" >> SHA256SUMS.txt
+          echo "eb0858bae3b6be53211071a9cd2bf45e1c99259766f48a5873eca49aa8187333  KodachiCard.zip" > SHA256SUMS.txt
+          echo "1c86fdebfaf5a788a937704b72f8698375fcd2b4fc4c2e57db5c508a392533e4  KodachiCard-Android.apk" >> SHA256SUMS.txt
           sha256sum --check SHA256SUMS.txt
-          cp KodachiCard.exe KoiCard.exe
           echo download.kodachi.top > CNAME
           touch .nojekyll
           cat > index.html <<'HTML'
-          <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kodachi 下载</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:640px;margin:12vh auto;padding:24px;color:#263228;background:#f6f8f3}a{color:#215c48}li{margin:20px 0}small{color:#566252}</style><h1>Kodachi 下载</h1><ul><li><a href="KodachiCard.exe" download>KodachiCard Windows 端下载</a> <small>EXE · 188.8 MB</small></li><li><a href="KodachiCard.apk" download>KodachiCard Android 端下载</a> <small>APK · 162.6 MB</small></li></ul><p><a href="SHA256SUMS.txt">SHA-256 文件校验值</a></p></html>
+          <!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kodachi 下载</title><style>body{font:18px/1.8 system-ui,sans-serif;max-width:640px;margin:12vh auto;padding:24px;color:#263228;background:#f6f8f3}a{color:#215c48}li{margin:20px 0}small{color:#566252}</style><h1>Kodachi 下载</h1><ul><li><a href="KodachiCard.zip" download>KodachiCard Windows 端下载</a> <small>ZIP · 200.2 MB · 解压后运行</small></li><li><a href="KodachiCard-Android.apk" download>KodachiCard Android 端下载</a> <small>APK · 207.1 MB</small></li></ul><p><a href="SHA256SUMS.txt">SHA-256 文件校验值</a></p></html>
           HTML
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
