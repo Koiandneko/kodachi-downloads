@@ -26,10 +26,10 @@ jobs:
         run: |
           mkdir -p public
           gh release download 2026-10-14 --pattern KodachiCard-Windows.zip --dir public
-          gh release download 2026-10-14 --pattern KodachiCard-Android.apk --dir public
+          gh release download 2026-10-14-android-r2 --pattern KodachiCard-Android.apk --dir public
           cd public
           echo "b40cfea9da4122adc57cddd98cfc6ba3289c8d4ceac48ac4e174fe9e9a18cec5  KodachiCard-Windows.zip" > SHA256SUMS.txt
-          echo "35d75a73be72cb3b67d44c786cfb3658f8752cba05606c4f1a7a1555bca699cb  KodachiCard-Android.apk" >> SHA256SUMS.txt
+          echo "a8f922bc72b1607e1c78f632eef90543d70a7c45e30506974d2baa4a31aa5f90  KodachiCard-Android.apk" >> SHA256SUMS.txt
           sha256sum --check SHA256SUMS.txt
           echo download.kodachi.top > CNAME
           touch .nojekyll
